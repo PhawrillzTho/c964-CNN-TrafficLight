@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>WT's C964 Project</title>
+<script src="plotly-2.12.1.min.js"></script>
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+
+<style type="text/css">
+    <!--
+body {
+	color:#000000;
+	background-color:#0039b6;
+	margin:0;
+}
+
+#container {
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	}
+
+a img {
+	border:2px;
+}
+
+-->
+</style>
+</head>
+<body>
+<br>
+<h1><b>Laser Focus - CNN Traffic Lightbox Image Recognition</b></h1>
+<br>
+<br>
+<br>
+    <select type="text" id="dropBox" onchange="changeSelect()">
+    <option value="NULL" style="color:grey">choose an option...</option>
+    <option value="My Image">Select my own image</option>
+    <option value="Red Image 1">Red Image 1</option>
+    <option value="Red Image 2">Red Image 2</option>
+    <option value="Red Image 3">Red Image 3</option>
+    <option value="Red Image 4">Red Image 4</option>
+    <option value="Red Image 5">Red Image 5</option>
+    <option value="Green Image 1">Green Image 1</option>
+    <option value="Green Image 2">Green Image 2</option>
+    <option value="Green Image 3">Green Image 3</option>
+    <option value="Green Image 4">Green Image 4</option>
+    <option value="Green Image 5">Green Image 5</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <div id="UploadMyOwn" style="display:none;">
+        <img id="img" src="#" alt="your image" style="display:none;" style="width: 250px; height: 300px;" />
+        <input type='file' onchange="readURL(this);" />
+        <br>
+        <br>
+        <br>
+        <br>
+        <button onclick="predict('img')">Submit</button>
+    </div>
+
+    <div id="red1_d" style="display:none;">
+        <img id="red1" src="/images/RED1.jpg" alt="Red Image 1" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('red1')">Submit</button>
+    </div>
+
+    <div id="red2_d" style="display:none;">
+        <img id="red2" src="/images/RED2.jpg" alt="Red Image 2" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('red2')">Submit</button>
+    </div>
+
+    <div id="red3_d" style="display:none;">
+        <img id="red3" src="/images/RED3.jpg" alt="Red Image 3" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('red3')">Submit</button>
+    </div>
+
+    <div id="red4_d" style="display:none;">
+        <img id="red4" src="/images/RED4.jpg" alt="Red Image 4" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('red4')">Submit</button>
+    </div>
+
+    <div id="red5_d" style="display:none;">
+        <img id="red5" src="/images/RED5.jpg" alt="Red Image 5" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('red5')">Submit</button>
+    </div>
+
+    <div id="green1_d" style="display:none;">
+        <img id="green1" src="/images/GREEN1.jpg" alt="Green Image 1" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('green1')">Submit</button>
+    </div>
+
+    <div id="green2_d" style="display:none;">
+        <img id="green2" src="/images/GREEN2.jpg" alt="Green Image 2" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('green2')">Submit</button>
+    </div>
+    
+    <div id="green3_d" style="display:none;">
+        <img id="green3" src="/images/GREEN3.jpg" alt="Green Image 3" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('green3')">Submit</button>
+    </div>
+
+    <div id="green4_d" style="display:none;">
+        <img id="green4" src="/images/GREEN4.jpg" alt="Green Image 4" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('green4')">Submit</button>
+    </div>
+
+    <div id="green5_d" style="display:none;">
+        <img id="green5" src="/images/GREEN5.jpg" alt="Green Image 5" style="width: 250px; height: 300px;"/>
+        <br>
+        <button onclick="predict('green5')">Submit</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+
+<div id="result_label" style="display:none;"><hr>Result:</div>
+<div id="result"></div>
+
+<div id="plotly_result"></div>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="/classifier.js"></script>
+<script src="/actions.js"></script>
+</html>
